@@ -1,0 +1,64 @@
+{
+  "name": "mock-server-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --ignore client/ --exec \"babel-node\" index.js",
+    "webpack": "webpack --watch",
+    "build:client": "cross-env APP_ENV=client NODE_ENV=production webpack",
+    "build:server": "cross-env APP_ENV=server NODE_ENV=production webpack",
+    "build:scripts": "babel scripts/ --out-dir scripts/dest --ignore scripts/dest/",
+    "build": "npm run build:server && npm run build:client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyasliu/mock-server-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eyasliu/mock-server-cli/issues"
+  },
+  "bin": {
+    "mock-server": "server.js"
+  },
+  "homepage": "https://github.com/eyasliu/mock-server-cli#readme",
+  "dependencies": {
+    "faker": "^3.1.0",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-logger": "^2.0.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "lodash": "^4.17.2",
+    "lowdb": "^0.14.0",
+    "mockjs": "^1.0.1-beta3",
+    "qiniu": "^6.1.13",
+    "regenerator-runtime": "^0.10.0",
+    "route-parser": "0.0.5",
+    "yargs": "^6.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.26.0",
+    "json-loader": "^0.5.4",
+    "material-ui": "^0.16.4",
+    "nodemon": "^1.11.0",
+    "react": "^15.4.1",
+    "react-codemirror": "^0.3.0",
+    "react-dom": "^15.4.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}
