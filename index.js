@@ -29,12 +29,6 @@ const appInfo = {
     version: pkg.version
 }
 
-console.log({
-    cwd: process.cwd(),
-    dirname: __dirname,
-    filenmae: __filename
-})
-
 if(config.h || config.help){
     console.log(
 `

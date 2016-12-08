@@ -4,7 +4,7 @@
 
 ![](screenshot.png)
 
-# 安装并运行
+# 安装
 
 ```
 npm i -g mock-server-cli
@@ -12,21 +12,42 @@ npm i -g mock-server-cli
 
 # 使用
 
+## 启动
+
+```shell
+$ mock-server --help # 显示帮助信息
+
+Usage: mock-server [options] [ --db mockdata | mockdata.json ]
+
+Options:
+
+  -h, --help                     output usage information
+  -v, --version                  output the version number
+
+  --port [number]                Port to use [3000]
+  --db [string]                  use the json database
+  --address [domain | ip]        Address to use [localhost]
+
+$ mock-server  # 启动服务
+mock server listening http://localhost:3000
+
+
+```
+
 ## 管理面板
 
-访问定义的域名与端口号，可进入管理面板。即可看见当前项目已定义的所有接口，点击接口可以编辑接口。
+访问定义的域名(默认： localhost)与端口号(默认：3000)，可进入管理面板。即可看见当前项目已定义的所有接口，点击接口可以编辑接口。
 
-## 多项目管理
+```
+http://localhost:3000
+```
 
-默认项目为 basic，域名为 `config.json` 定义的 domain，每次使用子域名访问都会自动新建一个项目，各个项目的接口定义完全独立
-
-如：定义的domain为 `mock.example.com`，访问时会自动新建一个项目，以后在使用 `sub.mock.example.com` 访问又会新建一个独立的 `sub` 项目
 
 ## 路由
 
 定义模拟数据接口时，可选择请求方式 `任意` `GET` `POST` `PUT` `DELETE` `OPTIONS`。
 
-接口url应该以 `/` 开头，可填写具体url，也可以使用 `:param` 方式定义带参数的路由，如果使用参数路由，在数据定义中可以使用占位符 `@param(:param)` 获取参数
+接口url可填写具体url，也可以使用 `:param` 方式定义带参数的路由，如果使用参数路由，在数据定义中可以使用占位符 `@param(:param)` 获取参数
 
  - /user/:id => `@param(id)`
  - /user/:userid/info => `@param(userid)`
