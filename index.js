@@ -1,3 +1,5 @@
+
+
 import "regenerator-runtime/runtime";
 import fs from 'fs'
 import koa from 'koa'
@@ -27,6 +29,12 @@ const appInfo = {
     version: pkg.version
 }
 
+console.log({
+    cwd: process.cwd(),
+    dirname: __dirname,
+    filenmae: __filename
+})
+
 if(config.h || config.help){
     console.log(
 `
@@ -37,7 +45,7 @@ Options:
 
   -h, --help                     output usage information
   -v, --version                  output the version number
-  
+
   --port [number]                Port to use [3000]
   --db [string]                  use the json database
   --address [domain | ip]        Address to use [localhost]

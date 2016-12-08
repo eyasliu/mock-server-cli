@@ -50,4 +50,21 @@ if(process.env.NODE_ENV === 'production'){
       comments: false
     }))
 }
+if(isServer){
+	config.node = {
+		__filename: false,
+		__dirname: false,
+		process: false
+	}
+	config.plugins.push(function(){
+    	setTimeout(() => {
+			this.plugin('done', () => {
+				// fs.appendFileSync(config.output.path + '/server.js', '#!/usr/bin/env node', 'utf8')
+    			const outputServer = fs.readFileSync(config.output.path + '/server.js')
+    			fs.writeFileSync(config.output.path + '/server.js', '#!/usr/bin/env node\n' + outputServer.toString())
+    			
+    		})
+    	})
+    })
+}
 export default config
