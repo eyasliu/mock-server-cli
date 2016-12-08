@@ -1,6 +1,6 @@
 {
   "name": "mock-server-cli",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,11 @@
   "bin": {
     "mock-server": "server.js"
   },
+  "files": [
+    "server.js",
+    "client"
+  ],
+  "main": "./server.js",
   "homepage": "https://github.com/eyasliu/mock-server-cli#readme",
   "dependencies": {
     "faker": "^3.1.0",
